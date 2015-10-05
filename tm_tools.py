@@ -31,18 +31,6 @@ def twitter_auth2(): # for Twython authentication
 	
 	return twitter
 
-def intervals(times): # given an array of timestamps, returns an array of separation times between the timestamps
-
-	shifted_times= times[:-1]
-
-	shifted_times = np.insert(shifted_times,0,0) ## add zero to beginning to array
-
-	seps= times - shifted_times
-
-	seps=seps[1:] # remove dummy first element
-
-	return seps
-
 def get_dt(t): # converts a twitter time string to a datetime object
 	
 	splitted = t.split(' ')
@@ -174,7 +162,7 @@ def make_time_map(times, times_tot_mins, sep_array, Ncolors):
 	fig=plt.figure()
 	ax =fig.add_subplot(111)
 	
-	plt.rc('text',usetex=True)
+	plt.rc('text',usetex=False)
 	plt.rc('font',family='serif')
 	
 	colormap = plt.cm.get_cmap('rainbow')  # see color maps at http://matplotlib.org/users/colormaps.html
