@@ -118,7 +118,7 @@ def make_heated_time_map(sep_array, Nside, width):
 	plt.minorticks_off()
 	
 	## change font, which can also now accept latex: http://matplotlib.org/users/usetex.html
-	plt.rc('text',usetex=True)
+	plt.rc('text',usetex=False)
 	plt.rc('font',family='serif')
 
 	my_max = np.max([np.max(sep_array[indices,0]), np.max(sep_array[indices,1])])
